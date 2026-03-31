@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Women Safety SOS</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="light">
+
+  <!-- Header -->
+  <header>
+    <div class="logo">🛡️ SafeGuard</div>
+    <div class="header-actions">
+      <button id="themeToggle" aria-label="Toggle dark mode">🌙</button>
+      <button id="settingsBtn" aria-label="Open settings">⚙️</button>
+    </div>
+  </header>
+
+  <!-- Status Bar -->
+  <div id="statusBar" class="status-bar hidden">
+    <span id="statusText">🚨 SOS ACTIVATED — Help is on the way!</span>
+  </div>
+
+  <!-- Main -->
+  <main>
+    <p class="tagline">Your safety, one tap away.</p>
+
+    <!-- SOS Button -->
+    <div class="sos-wrapper">
+      <div class="sos-ring ring3"></div>
+      <div class="sos-ring ring2"></div>
+      <div class="sos-ring ring1"></div>
+      <button id="sosBtn" aria-label="SOS Emergency Button">
+        <span class="sos-label">SOS</span>
+        <span class="sos-sub">Hold 2s</span>
+      </button>
+    </div>
+
+    <p id="holdHint" class="hold-hint">Press and hold to activate</p>
+
+    <!-- Location Card -->
+    <div id="locationCard" class="card hidden">
+      <h3>📍 Your Location</h3>
+      <p id="locationText">Fetching location...</p>
+      <p id="coordsText" class="coords"></p>
+      <a id="mapsLink" href="#" target="_blank" class="maps-btn hidden">Open in Google Maps</a>
+    </div>
+
+    <!-- Alert Card -->
+    <div id="alertCard" class="card hidden">
+      <h3>📲 Alert Status</h3>
+      <ul id="alertList"></ul>
+    </div>
+
+    <!-- Emergency Contacts -->
+    <div class="card">
+      <h3>👥 Emergency Contacts</h3>
+      <div id="contactsList"></div>
+      <button id="addContactBtn" class="secondary-btn">+ Add Contact</button>
+    </div>
+
+    <!-- Emergency Helplines -->
+    <div class="card">
+      <h3>📞 Emergency Helplines</h3>
+      <div class="helplines">
+        <a href="tel:112" class="helpline-btn police">🚔 Police — 112</a>
+        <a href="tel:1091" class="helpline-btn women">👩 Women Helpline — 1091</a>
+        <a href="tel:102" class="helpline-btn ambulance">🚑 Ambulance — 102</a>
+        <a href="tel:1098" class="helpline-btn child">🧒 Childline — 1098</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Settings Modal -->
+  <div id="settingsModal" class="modal hidden" role="dialog" aria-modal="true" aria-label="Settings">
+    <div class="modal-box">
+      <h2>Settings</h2>
+      <label>
+        <span>Alert Message</span>
+        <textarea id="alertMessage" rows="3">🚨 EMERGENCY! I need help. My location: {location}</textarea>
+      </label>
+      <label>
+        <span>Shake Detection</span>
+        <input type="checkbox" id="shakeToggle" />
+      </label>
+      <label>
+        <span>Siren Sound</span>
+        <input type="checkbox" id="sirenToggle" checked />
+      </label>
+      <button id="saveSettings" class="primary-btn">Save</button>
+      <button id="closeSettings" class="secondary-btn">Close</button>
+    </div>
+  </div>
+
+  <!-- Add Contact Modal -->
+  <div id="contactModal" class="modal hidden" role="dialog" aria-modal="true" aria-label="Add Contact">
+    <div class="modal-box">
+      <h2>Add Emergency Contact</h2>
+      <label>
+        <span>Name</span>
+        <input type="text" id="contactName" placeholder="e.g. Mom" />
+      </label>
+      <label>
+        <span>Phone</span>
+        <input type="tel" id="contactPhone" placeholder="e.g. +91XXXXXXXXXX" />
+      </label>
+      <button id="saveContact" class="primary-btn">Save Contact</button>
+      <button id="closeContact" class="secondary-btn">Cancel</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
